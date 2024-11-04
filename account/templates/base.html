@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mytube{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="header">
+        <span class="logo"><a href="{% url "videos:home" %}">Mytube</a></span>
+        <ul class="menu">
+            <li><a href="{% url 'account:list' %}">Каналы</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url "account:dashboard" %}">Профиль</a></li>
+                <li><a href="{% url "videos:create_video" %}">Загрузить видео</a></li>
+                <div id="user">
+                    <span>Привет, {{ user.username }}!</span>
+                    <form action={% url 'account:logout' %} method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Выйти">
+                    </form>
+                </div>
+            {% else %}
+                <div id="user1">
+                    <a href="{% url 'account:login' %}">Войти</a>
+            {% endif %}
+            
+        </ul>
+    </div>
+<div id="content">
+    {% block content %}
+    {% endblock content %}
+</div>
+
+<script>
+    {% block domready %}
+    {% endblock %}
+</script>

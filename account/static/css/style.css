@@ -1,0 +1,307 @@
+html, body {
+    color: white;
+    font-family: 'Arial';
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    color: #444;
+}
+
+#header {
+    background-color: #1560BD;
+    height: 60px;
+}
+
+ul.menu {
+    list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 60px;
+	color: white;
+	font-size: 20px;
+	overflow: hidden;
+}
+
+span.logo a {
+    color: white;
+    margin: 18px 8px 0 40px;
+    font-size: 20px;
+    float: left;
+    overflow: none;
+    text-decoration: none;
+}
+
+
+ul.menu li {
+    float: left;
+    font-size: 20px;
+    margin: 18px 8px 0 40px;
+}
+
+ul.menu li a {
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+ul.menu li a:hover {
+    background-color: black;
+}
+
+ul.menu li a:active {
+    background-color: black;
+}
+
+#user {
+    display: flex;
+    margin: 18px 8px 0 40px;
+    float: right;
+    font-size: 20px;
+    border: none;
+    background: none;
+    transition: background-color 0.3s;
+}
+
+#user input {
+    border: none;
+    background: none;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Arial';
+    transition: background-color 0.3s;
+    padding-left: 10px;
+}
+
+#user input:hover {
+    background-color: black;
+}
+
+#user input:active {
+    background-color: black;
+}
+
+#user1 a {
+    float: right;
+    margin: 18px 8px 0 40px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+#user1 a:hover {
+    background-color: black;
+}
+
+#user1 a:active {
+    background-color: black;
+}
+
+.login-form form input[type="text"], input[type="password"], input[type="email"]{
+    width: 200px;
+    height: 30px;
+    margin: 5px 0 5px 0;
+    padding: 5px 5px 5px 5px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+.login-form form input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+
+.login-form form input[type="submit"] {
+    margin: 5px 0 5px 0;
+    padding: 5px 5px 5px 5px;
+    font-family: 'Arial';
+    font-size: 16px;
+    background-color: #1560BD;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+.login-form form input[type="submit"]:hover {
+    background-color: black;
+}
+
+.login-form a {
+    color: #1560BD;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Arial';
+    transition: color 0.15s ease-in-out 0s;
+}
+
+.login-form a:hover {
+    color: black;
+}
+
+.login-form a:active {
+    color: black;
+}
+
+.login-form img {
+    width: 520px;
+    height: 300px;
+}
+
+.video {
+    float: left;
+}
+
+.video h2 {
+    padding-left: 50px;
+}
+
+.video a {
+    text-decoration: none;
+    color: white;
+}
+
+.video a:hover {
+    color: black;
+}
+
+.video a:active {
+    color: black;
+}
+
+.video p {
+    padding-left: 70px;
+}
+
+.video img:hover {
+    transform: scale(1.1);
+}
+
+.video img {
+    transition: transform 0.3s;
+    margin-right: 15px;
+    display: flex;
+    float: left;
+    border-radius: 0%;
+}
+
+.video iframe {
+    width: 560px;
+    height: 315px;
+}
+
+#detail video {
+    width: 940px;
+    height: 540px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#detail h2 {
+    margin-left: 20px;
+    margin-top: 30px;
+    font-size: 26px;
+}
+
+#detail p {
+    margin-left: 20px;
+}
+
+#detail a {
+    text-decoration: none;
+    color: white;
+}
+
+#detail input[type="text"] {
+    font-size: 20px;
+    width: 500px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+#detail input[type="text"]:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+
+#detail input[type="submit"] {
+    margin: 5px 0 5px 0;
+    padding: 5px 5px 5px 5px;
+    font-family: 'Arial';
+    font-size: 16px;
+    background-color: #1560BD;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow ;
+}
+
+#detail input[type="submit"]:hover {
+    background-color: black;
+}
+
+#detail input[type="submit"]:active {
+    background-color: black;
+}
+
+#detail img {
+    width: 30px;
+    height: 30px;
+    border-radius: 80%;
+}
+
+#mytuber {
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#mytuber h2 {
+    font-size: 26px;
+    margin-left: 42px;
+}
+
+#mytuber p {
+    font-size: 20px;
+}
+
+#mytuber a {
+    text-decoration: none;
+    color: white;
+}
+
+#mytuber a:hover {
+    color: black;
+}
+
+#mytuber a:active {
+    color: black;
+}
+
+#mytuber img {
+    width: 180px;
+    height: 180px;
+    border-radius: 80%;
+}
+
+#chanell {
+    float: left;
+    margin-top: 20px;
+}
+
+#chanell h2 {
+    font-size: 26px;
+}
+
+#chanell img {
+    width: 180px;
+    height: 180px;
+    border-radius: 80%;
+}

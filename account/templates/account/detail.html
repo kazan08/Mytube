@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block title %}{{ profile.user.username }}{% endblock title %}
+
+{% block content %}
+    <div id="chanell">
+        <img src="{% thumbnail profile.photo 40x40 %}">
+        <h2>{{ profile.user.username }}</h2>
+        <p>Родился: {{ profile.birth_date }}</p>
+
+        <h2>Видео: </h2>
+        <div class="video">
+            {% for video in videos %}
+                <a href="{{ video.get_absolute_url }}"><img src="{{ video.preview.url }}" alt="" width="200px" height="120px"></a>
+                <a href="{{ video.get_absolute_url }}"><h2>{{ video.name }}</h2></a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

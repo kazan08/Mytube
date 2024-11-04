@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Авторизация{% endblock title %}
+
+{% block content %}
+<div class="login-form">
+    <h2>Авторизация</h2>
+        {% if form.errors %} 
+            <p>Неправильный логин или пароль. Пожалуйста, попробуйте ещё раз</p>
+        {% endif %}
+        
+        <form action="{% url "account:login" %}" method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="hidden" value="{{ next }}">
+            <p><input type="submit" value="Войти"></p>
+            <p><a href="{% url "account:register" %}">Зарегистрироватся</a></p>
+            <p><a href="">Забыли пароль?</a></p>
+        </form>
+
+</div>
+{% endblock content %}

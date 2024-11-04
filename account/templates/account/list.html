@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block title %}Каналы{% endblock title %}
+
+{% block content %}
+    <h2>Каналы</h2>
+    <div id="mytuber">
+        {% for mytuber in profile_list %}
+            <a href="{% url 'account:profile' mytuber.user.username %}"><img src="{% thumbnail mytuber.photo 40x40 %}"></a>
+            <a href="{% url "account:profile" mytuber.user.username %}"><h2>{{ mytuber.user.username }}</h2></a>
+        {% endfor %}
+    </div>
+{% endblock %}

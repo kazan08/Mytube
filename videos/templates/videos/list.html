@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+
+{% block title %}Видео{% endblock title %}
+
+{% block content %}
+
+    <h2>Видео</h2>
+{% if video_list %}{% endif %}
+{% for v in video_list %}
+
+<div class="video">
+    <a href="{{ v.get_absolute_url }}"><img src="{{ v.preview.url }}" alt="" width="200px" height="120px"></a>
+    <a href="{{ v.get_absolute_url }}"><h2>{{ v.name }}</h2></a>
+</div>
+
+{% endfor %}
+
+{% endblock %}

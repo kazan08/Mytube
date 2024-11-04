@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block title %}Завершение регистрации{% endblock title %}
+
+{% block content %}
+    <h2>Регистрация</h2>
+    <p>Ваша учетная запись успешно создана. Теперь вы можете </p> <a href="{% url 'account:login' %}"></a>
+{% endblock %}

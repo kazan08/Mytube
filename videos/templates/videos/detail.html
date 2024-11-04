@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% load thumbnail %}
+
+{% block title %}{{ video.name }}{% endblock title %}
+
+{% block content %}
+    <div id="detail">
+        <video controls poster="{{ video.preview.url }}">
+            <source src="{{ video.video.url }}">
+            Ваш браузер не поддерживает HTML5 Video.
+        </video>
+        <h2>{{ video.name }}</h2>
+        <p>{{ video.description }}</p>
+        <span>{{ total_views }} просмотров</span>
+        <p><a href="{% url "account:profile" video.author_name.user.username %}"><img src="{% thumbnail video.author_name.photo 40x40 %}"> {{ video.author_name.user.username }}</a></p>
+        <p>Дата публикации: {{ video.pub_date }}</p>
+        
+        <form action="{% url "videos:like" video.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" id="like-button" value="Лайк"> <span id="like-count">{{ video.like.count }}</span>
+        </form>
+        <form action="{% url "videos:dislike" video.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" id="dislike-button" value="Дизлайк"> <span id="dislike-count">{{ video.dislike.count }}</span>
+        </form>
+        
+        <h2>Всего комментариев: {{ latest_comment_list.count }}</h2>
+        {% if latest_comment_list %}
+            <h2>Комментарии:</h2>
+            {% for comment in latest_comment_list %}
+                <h2>{{ comment.author_name.user.username }}</h2>
+                <p>{{ comment.text|linebreaks }}</p>
+            {% endfor %}
+        {% endif %}
+        <h2>Добавить комментарий:</h2>
+        <form action="{% url "videos:create_comment" video.id %}" method="post">
+            {% csrf_token %}
+            <p><input type="text" name="text"></p>
+            <p><input type="submit" value="Отправить"></p>
+        </form>
+    </div>
+{% endblock %}

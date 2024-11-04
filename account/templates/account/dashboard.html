@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Настройки{% endblock title %}
+
+{% block content %}
+<div class="settings-form">
+    <h2>Настройки</h2>
+    <p>Добро пожаловать в настройки!</p>
+    <p><a href="{% url "account:edit" %}">Редактировать аккаунт</a></p>
+    <p><a href="">Сменить пароль</a></p>
+</div>
+{% endblock %}
